@@ -1,12 +1,20 @@
 'use strict';
 
 export class NgCarouselComponentController {
-    constructor() {
+    constructor(ngCarouselOptions) {
         'ngInject';
+
+        // injects
+        this.ngCarouselOptions = ngCarouselOptions;
 
         this.compilationDesc = '';
         this.compilationFail = false;
         this.requiredBindings = ['arrayCarousel'];
+    }
+
+    _compileBindingsOptions() {
+        this.ngCarouselOptions.setOptions(this.options);
+        this._verifyRequiredBindings();
     }
 
     _verifyRequiredBindings() {
@@ -24,6 +32,6 @@ export class NgCarouselComponentController {
     }
 
     $onInit() {
-        this._verifyRequiredBindings();
+        this._compileBindingsOptions();
     }
 }

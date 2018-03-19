@@ -31,7 +31,7 @@
 
             <h2 class="heading-2">Implementação</h2>
             <p class="text">Blá</p>
-            <ng-carousel array-carousel="$ctrl.list"></ng-carousel>
+            <ng-carousel array-carousel="$ctrl.list" options="$ctrl.options"></ng-carousel>
         </div>
     </div>
 
@@ -55,6 +55,10 @@
 
             function ControllerCarousel() {
                 var vm = this;
+
+                vm.options = {
+                    autoplay: true
+                };
 
                 vm.list = [
                     { name: 'DulSeven' },

@@ -1,0 +1,88 @@
+{
+    "name": "ng-carousel",
+    "version": "1.0.0",
+    "description": "Simple, light and responsive carousel component",
+    "main": "index.js",
+    "directories": {
+        "example": "examples"
+    },
+    "scripts": {
+        "build": "npm run coverage && webpack -p --config webpack.prod.config.js",
+        "coverage": "karma start --single-run",
+        "lint": "./node_modules/.bin/eslint src/**/*.js",
+        "precommit": "npm run lint",
+        "prepublishOnly": "npm run build",
+        "prepush": "npm run coverage",
+        "start": "webpack -w --config webpack.dev.config.js",
+        "test": "karma start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:dulcetti/ng-carousel.git"
+    },
+    "keywords": [
+        "carousel",
+        "angular-carousel",
+        "ng-carousel"
+    ],
+    "authors": [
+        "Bruno Dulcetti <brunodulcetti@gmail.com>"
+    ],
+    "bugs": {
+        "url": "https://github.com/dulcetti/ng-carousel/issues"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "angular": "^1.6.8",
+        "angular-touch": "^1.6.9"
+    },
+    "devDependencies": {
+        "angular-mocks": "^1.6.9",
+        "autoprefixer": "^7.2.4",
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-angularjs-annotate": "^0.8.2",
+        "babel-plugin-istanbul": "^4.1.5",
+        "babel-plugin-transform-export-extensions": "^6.22.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "browser-sync": "^2.18.8",
+        "browser-sync-spa": "^1.0.3",
+        "clean-css-loader": "^0.1.4",
+        "clean-webpack-plugin": "^0.1.17",
+        "css-loader": "^0.28.8",
+        "css-mqpacker": "^6.0.1",
+        "eslint": "^4.15.0",
+        "eslint-config-angular": "^0.5.0",
+        "eslint-loader": "^1.9.0",
+        "eslint-plugin-angular": "^3.1.1",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-jsx-a11y": "^6.0.3",
+        "eslint-plugin-react": "^7.5.1",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "husky": "^0.14.3",
+        "jasmine-core": "^2.5.2",
+        "karma": "^1.7.1",
+        "karma-babel-preprocessor": "^6.0.1",
+        "karma-chrome-launcher": "^2.0.0",
+        "karma-coverage": "^1.1.1",
+        "karma-htmlfile-reporter": "^0.3.4",
+        "karma-jasmine": "^1.1.0",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-spec-reporter": "0.0.26",
+        "karma-threshold-reporter": "^0.1.15",
+        "karma-webpack": "^2.0.9",
+        "node-sass": "^4.7.2",
+        "postcss-loader": "^2.0.10",
+        "postcss-pxtorem": "^4.0.1",
+        "prismjs": "^1.12.2",
+        "sass-loader": "^6.0.6",
+        "style-loader": "^0.19.1",
+        "template-string-optimize-loader": "^2.2.3",
+        "uglifyjs-webpack-plugin": "^1.1.6",
+        "webpack": "^3.10.0",
+        "webpack-merge": "^4.1.1"
+    }
+}

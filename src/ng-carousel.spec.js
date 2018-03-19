@@ -34,4 +34,36 @@ describe('Carousel Component', () => {
         controller = null;
         scope = null;
     });
+
+    describe('Initial configs', () => {
+        beforeEach(() => {
+            let tag = '<ng-carousel array-carousel="arrayCarousel"></ng-carousel>',
+                bindings = {
+                    arrayCarousel: [0, 1, 2]
+                };
+
+            compileComponent(tag, bindings);
+        });
+
+        it('component should behave defined', () => {
+            expect(controller).toBeDefined();
+            expect(component).toBeDefined();
+        });
+    });
+
+    describe('Required Bindings', () => {
+        beforeEach(() => {
+            let tag = '<ng-carousel></ng-carousel>';
+            compileComponent(tag);
+        });
+
+        it('Bindings obrigatorios devem ser declarados e componente nao compilado', () => {
+            let hasComponent = document.getElementById('ng-carousel');
+            let error = document.querySelector('.error-binding');
+            
+            expect(controller.arrayCarousel).toBeUndefined();
+            expect(hasComponent).toBeFalsy();
+            expect(error).toBeTruthy();
+        });
+    });
 });

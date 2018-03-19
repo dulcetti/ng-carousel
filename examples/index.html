@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>NG Carousel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../node_modules/prismjs/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../dist/ng-carousel.style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body ng-app="app">
+    <div class="container" ng-controller="controller as $ctrl">
+        <div class="page-header">
+            <h1>ng-carousel</h1>
+            <h2 class="project-tagline">Componente de carousel responsivo</h2>
+        </div>
+
+        <div class="content">
+            <h1 class="heading-1">Component AngularJS de Carousel</h1>
+
+            <h2 class="heading-2">Bindings obrigatórios</h2>
+            <ul class="list">
+                <li>array-carousel</li>
+            </ul>
+
+            <h2 class="heading-2">Bindings opcionais</h2>
+            <ul class="list">
+                <li></li>
+            </ul>
+
+            <h2 class="heading-2">Implementação</h2>
+            <p class="text">Blá</p>
+            <wza-carousel array-carousel="$ctrl.list"></wza-carousel>
+        </div>
+    </div>
+
+    <footer class="footer"></footer>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/prismjs/prism.js"></script>
+    <script src="../node_modules/angular-touch/angular-touch.js"></script>
+    <script src="../dist/ng-carousel.component.js"></script>
+
+    <script>
+        (function() {
+            angular
+                .module('app', [
+                    'ng.carousel',
+                    'ngTouch'
+                ]);
+
+            angular
+                .module('app')
+                .controller('controller', ControllerCarousel);
+
+            function ControllerCarousel() {
+                var vm = this;
+
+                vm.list = [
+                    { name: 'DulSeven' },
+                    { name: 'Bruno Rocha' },
+                    { name: 'Bruno Dulcetti' },
+                    { name: 'Bruno Dul7' },
+                    { name: 'Bruno' }
+                ];
+            }
+        })();
+    </script>
+</body>
+</html>

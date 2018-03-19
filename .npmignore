@@ -1,0 +1,16 @@
+node_modules/
+coverage/
+src/
+.babelrc
+.eslintignore
+.eslintrc
+.gitignore
+.npmignore
+index.js
+karma.conf.js
+package-lock.json
+yarn.lock
+webpack.config.js
+webpack.karma.config.js
+webpack.dev.config.js
+webpack.prod.config.js

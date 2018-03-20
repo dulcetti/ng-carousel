@@ -4,37 +4,36 @@
 export const NgCarouselTemplate = ($templateCache) => (
     $templateCache.put('ng.carousel.template',
         `<p ng-if="$ctrl.compilationFail" class="error-binding">{{ $ctrl.compilationDesc }}</p>
-        <div class="ng-carousel" ng-show="$ctrl.carouselReady" ng-if="!$ctrl.compilationFail">
+        <div class="ng-carousel -{{ $ctrl.template }}" ng-show="$ctrl.isReady" ng-if="!$ctrl.compilationFail">
             <div class="carousel">
-                <div class="track">
-                    <div class="slide" ng-repeat="item in $ctrl.arrayCarousel track by $index">
-                        <div class="item"></div>
-                    </div>
-                </div>
+                <ul class="carousel">
+                    <li class="item" ng-repeat="item in $ctrl.arrayCarousel track by $index"></li>
+                </ul>
             </div>
-            <div class="navigation -prev"
+
+            <a href="javascript:;"
+                class="navigation -prev"
                 ng-if="$ctrl.options.arrows"
                 ng-show="$ctrl.showPrev"
                 ng-class="{ '-disable': !$ctrl.isClickable('prev')) }"
                 ng-click="$ctrl.prevSlide()">
-                <a href="javascript:;" class="link">
-                    <span>Anterior</span>
-                </a>
-            </div>
-            <div class="navigation -next"
+                <span>Anterior</span>
+            </a>
+
+            <a href="javascript:;"
+                class="navigation -next"
                 ng-if="$ctrl.options.arrows"
                 ng-show="$ctrl.showNext"
                 ng-class="{ '-disable': !$ctrl.isClickable('next')) }"
                 ng-click="$ctrl.nextSlide()">
-                <a href="javascript:;" class="link">
-                    <span>Próxima</span>
-                </a>
-            </div>
-            <ul class="dots" ng-if="$ctrl.options.dots">
-                <li ng-repeat="dot in $ctrl.totalDots"
-                    ng-class="{ '-active': dot == $ctrl.currentSlide/$ctrl.options.slidesToScroll }"
-                    ng-click="$ctrl.changeSlide(dot)">
-                    <a href="javascript:;"><span>{{ dot }}</span></a>
+                <span>Próxima</span>
+            </a>
+
+            <ul class="indicators" ng-if="$ctrl.options.indicators">
+                <li ng-repeat="indicator in $ctrl.totalIndicators"
+                    ng-class="{ '-active': indicator == $ctrl.currentSlide/$ctrl.options.slidesToScroll }"
+                    ng-click="$ctrl.changeSlide(indicator)">
+                    <span>&sdot;</span>
                 </li>
             </ul>
         </div>`

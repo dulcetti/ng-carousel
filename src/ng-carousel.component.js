@@ -5,7 +5,8 @@ import { NgCarouselComponentController } from './ng-carousel.controller';
 export const NgCarouselComponent = {
     bindings: {
         arrayCarousel: '<',
-        options: '<'
+        options: '<',
+        template: '@'
     },
     controller: NgCarouselComponentController,
     templateUrl: 'ng.carousel.template'

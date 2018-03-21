@@ -7,15 +7,15 @@ export const NgCarouselTemplate = ($templateCache) => (
         <div class="ng-carousel -{{ $ctrl.template }}" ng-show="$ctrl.isReady" ng-if="!$ctrl.compilationFail">
             <div class="carousel">
                 <ul class="carousel">
-                    <li class="item" ng-repeat="item in $ctrl.arrayCarousel track by $index"></li>
+                    <li class="item" ng-repeat="item in $ctrl.arrayCarousel track by $index">{{ item.name }}</li>
                 </ul>
             </div>
 
             <a href="javascript:;"
                 class="navigation -prev"
                 ng-if="$ctrl.options.arrows"
-                ng-show="$ctrl.showPrev"
-                ng-class="{ '-disable': !$ctrl.isClickable('prev')) }"
+                ng-show="$ctrl.visiblePrev"
+                ng-class="{ '-disable': !$ctrl.isClickablePrev }"
                 ng-click="$ctrl.prevSlide()">
                 <span>Anterior</span>
             </a>
@@ -23,8 +23,8 @@ export const NgCarouselTemplate = ($templateCache) => (
             <a href="javascript:;"
                 class="navigation -next"
                 ng-if="$ctrl.options.arrows"
-                ng-show="$ctrl.showNext"
-                ng-class="{ '-disable': !$ctrl.isClickable('next')) }"
+                ng-show="$ctrl.visibleNext"
+                ng-class="{ '-disable': !$ctrl.isClickableNext }"
                 ng-click="$ctrl.nextSlide()">
                 <span>Próxima</span>
             </a>

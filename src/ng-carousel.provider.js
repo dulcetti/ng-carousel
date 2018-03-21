@@ -5,32 +5,31 @@ export class NgCarouselProvider {
         this.options = {
             arrows: true,
             autoplay: false,
-            autoplaySpeed: 3000,
+            autoplaySpeed: 4000,
             cssEase: 'ease',
-            dots: false,
             easing: 'linear',
             fade: false,
+            indicators: false,
             infinite: true,
             initialSlide: 0,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            speed: 500,
-            visiblePrev: false,
-            visibleNext: false,
-            draggable: true,
             lazyLoad: 'ondemand',
+            speed: 500,
+            slidesToScrollDesktop: 1,
+            slidesToShowDesktop: 1,
+            slidesToScrollMobile: 1,
+            slidesToShowMobile: 1,
             swipe: true,
             swipeToSlide: false,
             touchMove: true,
-            vertical: false,
-            verticalSwiping: false
+            visibleNext: false,
+            visiblePrev: false
         };
     }
 
     $get() {
         return {
-            setOptions: options => {
-                this.options = angular.extend(this.options, options);
+            setOption: (option, value) => {
+                this.options[option] = value;
             },
             getOptions: () => {
                 return this.options;

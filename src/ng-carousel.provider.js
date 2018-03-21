@@ -5,9 +5,9 @@ export class NgCarouselProvider {
         this.options = {
             arrows: true,
             autoplay: false,
-            autoplaySpeed: 3000,
+            autoplaySpeed: 4000,
             cssEase: 'ease',
-            dots: false,
+            indicators: false,
             easing: 'linear',
             fade: false,
             infinite: true,
@@ -17,13 +17,10 @@ export class NgCarouselProvider {
             speed: 500,
             visiblePrev: false,
             visibleNext: false,
-            draggable: true,
             lazyLoad: 'ondemand',
             swipe: true,
             swipeToSlide: false,
-            touchMove: true,
-            vertical: false,
-            verticalSwiping: false
+            touchMove: true
         };
     }
 

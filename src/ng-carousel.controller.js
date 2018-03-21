@@ -12,8 +12,11 @@ export class NgCarouselComponentController {
         this.requiredBindings = ['arrayCarousel'];
     }
 
-    _compileBindingsOptions() {
+    // 'private' methods
+    _init() {
         this.ngCarouselOptions.setOptions(this.options);
+        this.isReady = true;
+        this.template = this.template || 'default';
         this._verifyRequiredBindings();
     }
 
@@ -31,7 +34,8 @@ export class NgCarouselComponentController {
         }
     }
 
+    // public methods
     $onInit() {
-        this._compileBindingsOptions();
+        this._init();
     }
 }

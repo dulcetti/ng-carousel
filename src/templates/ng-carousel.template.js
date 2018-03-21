@@ -7,7 +7,7 @@ export const NgCarouselTemplate = ($templateCache) => (
         <div class="ng-carousel -{{ $ctrl.template }}" ng-show="$ctrl.isReady" ng-if="!$ctrl.compilationFail">
             <div class="carousel">
                 <ul class="carousel">
-                    <li class="item" ng-repeat="item in $ctrl.arrayCarousel track by $index"></li>
+                    <li class="item" ng-repeat="item in $ctrl.arrayCarousel track by $index">{{ item.name }}</li>
                 </ul>
             </div>
 

@@ -7,20 +7,22 @@ export class NgCarouselProvider {
             autoplay: false,
             autoplaySpeed: 4000,
             cssEase: 'ease',
-            indicators: false,
             easing: 'linear',
             fade: false,
+            indicators: false,
             infinite: true,
             initialSlide: 0,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            speed: 500,
-            visiblePrev: false,
-            visibleNext: false,
             lazyLoad: 'ondemand',
+            speed: 500,
+            slidesToScrollDesktop: 1,
+            slidesToShowDesktop: 1,
+            slidesToScrollMobile: 1,
+            slidesToShowMobile: 1,
             swipe: true,
             swipeToSlide: false,
-            touchMove: true
+            touchMove: true,
+            visibleNext: false,
+            visiblePrev: false
         };
     }
 

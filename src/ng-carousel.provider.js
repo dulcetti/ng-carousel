@@ -28,8 +28,8 @@ export class NgCarouselProvider {
 
     $get() {
         return {
-            setOptions: options => {
-                this.options = angular.extend(this.options, options);
+            setOption: (option, value) => {
+                this.options[option] = value;
             },
             getOptions: () => {
                 return this.options;

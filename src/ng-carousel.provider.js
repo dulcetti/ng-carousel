@@ -15,14 +15,14 @@ export class NgCarouselProvider {
             lazyLoad: 'ondemand',
             speedCarousel: 500,
             slidesToScrollDesktop: 1,
-            slidesToShowDesktop: 1,
+            slidesToShowDesktop: 3,
             slidesToScrollMobile: 1,
             slidesToShowMobile: 1,
             swipe: true,
             swipeToSlide: false,
             touchMove: true,
             visibleNext: true,
-            visiblePrev: false
+            visiblePrev: true
         };
     }
 

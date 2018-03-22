@@ -5,17 +5,13 @@ export const NgCarouselTemplate = ($templateCache) => (
     $templateCache.put('ng.carousel.template',
         `<p ng-if="$ctrl.compilationFail" class="error-binding">{{ $ctrl.compilationDesc }}</p>
         <div class="ng-carousel -{{ $ctrl.template }}" ng-show="$ctrl.isReady" ng-if="!$ctrl.compilationFail">
-            <div class="carousel">
-                <ul class="carousel">
-                    <li class="item" ng-repeat="item in $ctrl.arrayCarousel track by $index">{{ item.name }}</li>
-                </ul>
-            </div>
+            <div class="carousel" ng-transclude></div>
 
             <a href="javascript:;"
                 class="navigation -prev"
                 ng-if="$ctrl.options.arrows"
                 ng-show="$ctrl.visiblePrev"
-                ng-class="{ '-disable': !$ctrl.isClickablePrev }"
+                ng-class="{ '-disable': !$ctrl.prevClickable }"
                 ng-click="$ctrl.prevSlide()">
                 <span>Anterior</span>
             </a>
@@ -24,16 +20,16 @@ export const NgCarouselTemplate = ($templateCache) => (
                 class="navigation -next"
                 ng-if="$ctrl.options.arrows"
                 ng-show="$ctrl.visibleNext"
-                ng-class="{ '-disable': !$ctrl.isClickableNext }"
+                ng-class="{ '-disable': !$ctrl.nextClickable }"
                 ng-click="$ctrl.nextSlide()">
                 <span>Próxima</span>
             </a>
 
             <ul class="indicators" ng-if="$ctrl.options.indicators">
-                <li ng-repeat="indicator in $ctrl.totalIndicators"
+                <li ng-repeat="indicator in $ctrl.arrayCarousel track by $index"
                     ng-class="{ '-active': indicator == $ctrl.currentSlide/$ctrl.options.slidesToScroll }"
                     ng-click="$ctrl.changeSlide(indicator)">
-                    <span>&sdot;</span>
+                    <span>{{ $index + 1 }}</span>
                 </li>
             </ul>
         </div>`

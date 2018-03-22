@@ -1,18 +1,26 @@
 'use strict';
 
 export class NgCarouselComponentController {
-    constructor(ngCarouselOptions) {
+    constructor(ngCarouselOptions, $q) {
         'ngInject';
 
         // injects
         this.ngCarouselOptions = ngCarouselOptions;
+        this.$q = $q;
 
         this.compilationDesc = '';
         this.compilationFail = false;
-        this.requiredBindings = ['arrayCarousel'];
+        this.requiredBindings = [];
     }
 
     // 'private' methods
+    _getIndexOffset() {
+        let scrollOffset = this.arrayCarousel.length % this.slidesToScroll !== 0,
+            indexOffset = (scrollOffset) ? 0 : (this.arrayCarousel.length - this.currentSlide) % this.slidesToScroll;
+
+        return indexOffset;
+    }
+
     _init() {
         this._verifyRequiredBindings();
         this._mountOptions();

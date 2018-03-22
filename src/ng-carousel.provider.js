@@ -9,11 +9,11 @@ export class NgCarouselProvider {
             cssEase: 'ease',
             easing: 'linear',
             fade: false,
-            indicators: false,
+            indicators: true,
             infinite: true,
             initialSlide: 0,
             lazyLoad: 'ondemand',
-            speed: 500,
+            speedCarousel: 500,
             slidesToScrollDesktop: 1,
             slidesToShowDesktop: 1,
             slidesToScrollMobile: 1,
@@ -21,7 +21,7 @@ export class NgCarouselProvider {
             swipe: true,
             swipeToSlide: false,
             touchMove: true,
-            visibleNext: false,
+            visibleNext: true,
             visiblePrev: false
         };
     }

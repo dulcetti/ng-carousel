@@ -9,5 +9,6 @@ export const NgCarouselComponent = {
         template: '@'
     },
     controller: NgCarouselComponentController,
-    templateUrl: 'ng.carousel.template'
+    templateUrl: 'ng.carousel.template',
+    transclude: true
 };

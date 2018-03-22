@@ -31,7 +31,11 @@
 
             <h2 class="heading-2">Implementação</h2>
             <p class="text">Blá</p>
-            <ng-carousel array-carousel="$ctrl.list" options="$ctrl.options"></ng-carousel>
+            <ng-carousel array-carousel="$ctrl.list" options="$ctrl.options">
+                <div class="item-carousel" ng-repeat="item in $ctrl.list track by $index">
+                    <h2 class="title">{{ item.name }}</h2>
+                </div>
+            </ng-carousel>
         </div>
     </div>
 

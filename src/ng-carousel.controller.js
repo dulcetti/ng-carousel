@@ -19,6 +19,8 @@ export class NgCarouselComponentController {
 
         this.animType = null;
         this.currentSlide = this.options.initialSlide;
+        this.nextClickable = true;
+        this.prevClickable = false;
         this.isReady = true;
         this.isTrackMoving = false;
         this.nextOk = false;
@@ -62,6 +64,7 @@ export class NgCarouselComponentController {
         }
     }
 
+    // public methods
     $onInit() {
         this._init();
     }

@@ -27,7 +27,8 @@ export const NgCarouselTemplate = ($templateCache) => (
 
             <ul class="indicators" ng-if="$ctrl.options.indicators">
                 <li ng-repeat="indicator in $ctrl.arrayCarousel track by $index"
-                    ng-class="{ '-active': indicator == $ctrl.currentSlide/$ctrl.options.slidesToScroll }"
+                    class="indicator"
+                    ng-class="{ '-active': $index == $ctrl.currentSlide/$ctrl.slidesToScroll }"
                     ng-click="$ctrl.changeSlide(indicator)">
                     <span>{{ $index + 1 }}</span>
                 </li>

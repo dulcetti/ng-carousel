@@ -1,15 +1,54 @@
 .ng-carousel
+    position: relative
+
+    *
+        box-sizing: border-box
+
     > .carousel
-        background-color: #ccc
+        margin: 0 40px 20px
+        min-height: 60px
+        overflow: hidden
+        position: relative
         
         > .item-carousel
             background-color: #999
-            border-right: 2px solid #666
-            display: inline-block
+            margin: 0
             padding: 0 20px
+            position: absolute
+            top: 0
+            transition: left .25s
+            width: 100%
 
-            &:last-child
-                border-right: 0
+    > .navigation
+        background-repeat: no-repeat
+        background-size: 32px 58px
+        color: #000
+        display: block
+        height: 58px
+        position: absolute
+        top: 0
+        width: 32px
+
+        > span
+            display: none
+
+        &.-next
+            right: 0
+
+            +mq('desktop', max)
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAB0CAMAAADq3HF8AAAAaVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnbPKNAAAAInRSTlMAAQQYGRobHCIlPUVJamtub36Jj6eoqsHLzNfY2drb+Pn+svLymgAAAKlJREFUeAHt2VkOwjAQg+EB2rAUyr6UtgF8/0MixAkYo0SR7PdPijKPv5ktNvv1xLzbPgBcg1OvXvgszn38BHx9cPEOlL+A8g04fyD9Uf5ffuS8fF2ylx/K9vIV4+V7efmcfpbX3+Wz+tuU861R/kxy8vHk13GHS62l+5y6SqOlpQdpj67L0tJjaVo6/K6lo3SatNEQms86HaHJpMUHNds9mZxntmz9MfENb4ap++Hc2XoAAAAASUVORK5CYII=')
+
+            +mq('desktop')
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAA6CAMAAADm6as7AAAAMFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaPxwLAAAAD3RSTlMABQYiJCtOT2iprLHf4/6vLi8wAAAASUlEQVQ4y+3VOQoAIAxE0bjv5v63tbXKgJ0wtvMgdl+k9OrFeGGrDktkVVu4iURcFBQUt2iCRHoH6AT6JHfuP+8wSTBqMIsorAfPcBN16QXRpgAAAABJRU5ErkJggg==')
+
+        &.-prev
+            left: 0
+
+            +mq('desktop', max)
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAB0CAMAAADq3HF8AAAAgVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABtFS1lAAAAKnRSTlMAAQsbHB0eHyAhIiMkJT1FSWprbm9+g4mPp6rAwczb3N3e3+Dh4uP4+f7s1uUwAAAAxklEQVR42u3Zxw7CMBBF0aGENCB0SCjpFP//ByLEBolVfCV7M29/JGu8vGK50Wq/TsR2k4sx5rG11NOb+ey1tNOl+S5H2lyRNgXSJkP6OFgHP/o0XFeqXetZrdq1DpluVLvWEdOtatc67lS71gnTvWrXOmX6rnq4niM9LomWA9JyBhpw+nh+Ov5xIql65nvmE/V+fcd8rN6rj1r1Xn3DfKjer6+Zn6n36oNKvVdf/nmQNpjPmC9oVEI+h0GN5LznTkBM3CxE3m0R0s1u3aKGAAAAAElFTkSuQmCC')
+
+            +mq('desktop')
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAA6CAMAAADm6as7AAAAWlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACLSV5RAAAAHXRSTlMABQYHCAkKIiQ7Tk9orLKztLW2t7i5uru8vd/j/ma2utUAAACESURBVHjavdVHDoAwDERReu8QAgHuf03gAMxI2ODt+5KTlT0wQVWX0Jvj2FPo1xTP3t7ufOxb9to77CHzXuiD0EeZR9PHboQ+Y4+ZW6Ev33qyYvcM8Rw4CNgK/kj+Tf3CKhQzKyJeGIVi+qMIR4ViUCh6haJjRcCLVqtwPj1q9CzSw3oCMOolgQumP6sAAAAASUVORK5CYII=')
 
     > .indicators
         margin: 0

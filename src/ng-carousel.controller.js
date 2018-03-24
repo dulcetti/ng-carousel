@@ -28,6 +28,8 @@ export class NgCarouselComponentController {
             value = parseInt(value);
             allItems[index].style.left = (direction == 'next') ? (value - itemWidth) + 'px' : (value + itemWidth) + 'px';
         }
+
+        this.currentSlide = (direction == 'next') ? this.currentSlide + 1 : this.currentSlide - 1;
     }
 
     _getIndexOffset() {

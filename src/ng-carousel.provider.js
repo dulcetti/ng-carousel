@@ -5,24 +5,17 @@ export class NgCarouselProvider {
         this.options = {
             arrows: true,
             autoplay: false,
-            autoplaySpeed: 4000,
-            cssEase: 'ease',
-            easing: 'linear',
-            fade: false,
             indicators: true,
             infinite: true,
             initialSlide: 0,
-            lazyLoad: 'ondemand',
-            speedCarousel: 500,
+            nextVisible: true,
+            prevVisible: false,
             slidesToScrollDesktop: 1,
             slidesToShowDesktop: 3,
             slidesToScrollMobile: 1,
             slidesToShowMobile: 1,
             swipe: true,
-            swipeToSlide: false,
-            touchMove: true,
-            visibleNext: true,
-            visiblePrev: true
+            swipeToSlide: false
         };
     }
 

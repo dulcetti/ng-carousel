@@ -30,6 +30,7 @@ export class NgCarouselComponentController {
         }
 
         this.currentSlide = (direction == 'next') ? this.currentSlide + 1 : this.currentSlide - 1;
+        this._toggleNavigation(direction);
     }
 
     _getIndexOffset() {
@@ -59,8 +60,8 @@ export class NgCarouselComponentController {
         this.transformType = null;
         this.transitionType = null;
         this.visibleIndicators = false;
-        this.visibleNext = this.options.visibleNext;
-        this.visiblePrev = this.options.visiblePrev;
+        this.nextVisible = this.options.nextVisible;
+        this.prevVisible = this.options.prevVisible;
         this.width = 1;
     }
 
@@ -95,6 +96,17 @@ export class NgCarouselComponentController {
                 allItems[index].style.left = (index === 0) ? '0px' : `${ (itemWidth * index) }px`;
             }
         });
+    }
+
+    _toggleNavigation(type) {
+        if (this.currentSlide == 0) {
+            this.prevVisible = false;
+        } else if (this.currentSlide == (this.arrayCarousel.length - 1)) {
+            this.nextVisible = false;
+        } else {
+            this.prevVisible = true;
+            this.nextVisible = true;
+        }
     }
 
     _verifyRequiredBindings() {

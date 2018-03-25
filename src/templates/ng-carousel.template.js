@@ -10,8 +10,7 @@ export const NgCarouselTemplate = ($templateCache) => (
             <a href="javascript:;"
                 class="navigation -prev"
                 ng-if="$ctrl.options.arrows"
-                ng-show="$ctrl.visiblePrev"
-                ng-class="{ '-disable': !$ctrl.prevClickable }"
+                ng-show="$ctrl.prevVisible"
                 ng-click="$ctrl.prevSlide()">
                 <span>&lsaquo;</span>
             </a>
@@ -19,8 +18,7 @@ export const NgCarouselTemplate = ($templateCache) => (
             <a href="javascript:;"
                 class="navigation -next"
                 ng-if="$ctrl.options.arrows"
-                ng-show="$ctrl.visibleNext"
-                ng-class="{ '-disable': !$ctrl.nextClickable }"
+                ng-show="$ctrl.nextVisible"
                 ng-click="$ctrl.nextSlide()">
                 <span>&rsaquo;</span>
             </a>

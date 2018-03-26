@@ -16,19 +16,14 @@ export class NgCarouselComponentController {
 
     // 'private' methods
     _executeSlide(direction = 'next', type = 'horizontal') {
-        let allItems = document.querySelectorAll('.ng-carousel > .carousel > .item-carousel'),
-            allItemsLength = allItems.length,
-            index = 0,
-            itemWidth = allItems[0].clientWidth;
+        let carousel = document.querySelector('.ng-carousel > .track > .carousel'),
+            firstItem = document.querySelector('.ng-carousel > .track > .carousel > .item-carousel'),
+            itemWidth = firstItem.clientWidth,
+            leftPosition = carousel.style.left,
+            value = leftPosition.replace('px', '') || 0;
         
-        for (; index < allItemsLength; index += 1) {
-            let element = allItems[index].style.left,
-                value = element.replace('px', '') || 0;
-            
-            value = parseInt(value);
-            allItems[index].style.left = (direction == 'next') ? (value - itemWidth) + 'px' : (value + itemWidth) + 'px';
-        }
-
+        value = parseInt(value);
+        carousel.style.left = (direction == 'next') ? (value - itemWidth) + 'px' : (value + itemWidth) + 'px';
         this.currentSlide = (direction == 'next') ? this.currentSlide + 1 : this.currentSlide - 1;
         this._toggleNavigation(direction);
     }

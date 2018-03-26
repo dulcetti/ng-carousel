@@ -5,7 +5,9 @@ export const NgCarouselTemplate = ($templateCache) => (
     $templateCache.put('ng.carousel.template',
         `<p ng-if="$ctrl.compilationFail" class="error-binding">{{ $ctrl.compilationDesc }}</p>
         <div class="ng-carousel -{{ $ctrl.template }}" ng-show="$ctrl.isReady" ng-if="!$ctrl.compilationFail">
-            <div class="carousel" ng-transclude></div>
+            <div class="track">
+                <div class="carousel" ng-transclude></div>
+            </div>
 
             <a href="javascript:;"
                 class="navigation -prev"

@@ -4,20 +4,29 @@
     *
         box-sizing: border-box
 
-    > .carousel
+    > .track
         margin: 0 40px 20px
         min-height: 60px
         overflow: hidden
         position: relative
-        
-        > .item-carousel
-            background-color: #999
-            margin: 0
-            padding: 0 20px
+
+        > .carousel
+            align-items: center
+            display: flex
+            justify-content: space-between
+            left: 0
             position: absolute
             top: 0
             transition: left .25s
             width: 100%
+            
+            > .item-carousel
+                background-color: #999
+                display: block
+                flex: 1 0 auto
+                margin: 0
+                padding: 0 20px
+                width: 100%
 
     > .navigation
         background-repeat: no-repeat

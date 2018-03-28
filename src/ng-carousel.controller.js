@@ -18,12 +18,11 @@ export class NgCarouselComponentController {
     _executeSlide(direction = 'next', type = 'horizontal') {
         let carousel = document.querySelector('.ng-carousel > .track > .carousel'),
             firstItem = document.querySelector('.ng-carousel > .track > .carousel > .item-carousel'),
-            itemWidth = firstItem.clientWidth,
             leftPosition = carousel.style.left,
             value = leftPosition.replace('px', '') || 0;
         
         value = parseInt(value);
-        carousel.style.left = (direction == 'next') ? (value - itemWidth) + 'px' : (value + itemWidth) + 'px';
+        carousel.style.left = (direction == 'next') ? (value - this.itemWidth) + 'px' : (value + this.itemWidth) + 'px';
         this.currentSlide = (direction == 'next') ? this.currentSlide + 1 : this.currentSlide - 1;
         this._toggleNavigation(direction);
     }
@@ -46,6 +45,7 @@ export class NgCarouselComponentController {
         this.prevClickable = true;
         this.isReady = true;
         this.isTrackMoving = false;
+        this.itemWidth = 0;
         this.nextOk = false;
         this.prevOk = false;
         this.slideStyle = {};
@@ -82,13 +82,15 @@ export class NgCarouselComponentController {
 
     _renderItems() {
         this.$timeout(() => {
-            let allItems = document.querySelectorAll('.ng-carousel > .carousel > .item-carousel'),
+            let allItems = document.querySelectorAll('.ng-carousel > .track > .carousel > .item-carousel'),
                 allItemsLength = allItems.length,
-                index = 0,
-                itemWidth = allItems[0].clientWidth;
+                index = 0;
+
+            this.itemWidth = allItems[0].clientWidth / this.slidesToShow;
 
             for (; index < allItemsLength; index += 1) {
-                allItems[index].style.left = (index === 0) ? '0px' : `${ (itemWidth * index) }px`;
+                allItems[index].style.left = (index === 0) ? '0px' : `${ (this.itemWidth * index) }px`;
+                allItems[index].style.width = `${ this.itemWidth }px`;
             }
         });
     }

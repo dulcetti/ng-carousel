@@ -70,12 +70,29 @@
             border-radius: 50%
             cursor: pointer
             display: inline-block
-            height: 8px
+            height: 16px
             list-style: none
             margin: 0 2px
             padding: 0
+            position: relative
             text-indent: -99999px
-            width: 8px
+            width: 16px
+
+            &:after
+                border-radius: 50%
+                content: '.'
+                display: block
+                height: 16px
+                left: 50%
+                margin: -8px 0 0 -8px
+                position: absolute
+                top: 50%
+                transition: all .25s
+                transform: scale(0)
+                width: 16px
 
             &.-active
-                background-color: #000
+                &:after
+                    background-color: #000
+                    transform: scale(1)
+                    transition: all .25s

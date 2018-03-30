@@ -70,7 +70,7 @@ export class NgCarouselComponentController {
     }
 
     _mountIndicators() {
-        const numberSlides = this.arrayCarousel.length / this.slidesToShow;
+        const numberSlides = (this.arrayCarousel.length - this.slidesToShow) + 1;
         let index = 0;
         this.numberIndicators = [];
 
@@ -110,7 +110,7 @@ export class NgCarouselComponentController {
     _toggleNavigation(type) {
         if (this.currentSlide == 0) {
             this.prevVisible = false;
-        } else if (this.currentSlide == (this.arrayCarousel.length - 1)) {
+        } else if (this.currentSlide == (this.numberIndicators.length - 1)) {
             this.nextVisible = false;
         } else {
             this.prevVisible = true;
